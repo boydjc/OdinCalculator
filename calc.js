@@ -39,3 +39,28 @@ const calculator = {
 		return result;
 	},
 };
+
+
+// action listeners for calculator buttons
+
+let numButtons = document.getElementsByClassName('calButton');
+
+for(let i=0; i<numButtons.length; i++) {
+	numButtons[i].addEventListener('click', (e) => {
+		let exprDisplay = document.querySelector('#exprDisplay');
+		exprDisplay.innerHTML = `${exprDisplay.innerHTML} ${numButtons[i].innerHTML}`;
+	});
+}
+
+let opButtons = document.getElementsByClassName('opButton');
+
+for(let i=0; i<opButtons.length; i++) {
+	opButtons[i].addEventListener('click', (e) => {
+		let exprDisplay = document.querySelector('#exprDisplay');
+		if(opButtons[i].innerHTML === 'AC') {
+			exprDisplay.innerHTML = '';
+		}else {
+			exprDisplay.innerHTML = `${exprDisplay.innerHTML} ${opButtons[i].innerHTML}`;
+		}
+	});
+}

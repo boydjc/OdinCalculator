@@ -15,6 +15,10 @@ const calculator = {
 		return a / b;
 	},
 
+	perc: function(a) {
+		return a / 100;
+	},
+
 	operate: function(op, a, b) {
 		
 		let result;
@@ -101,6 +105,122 @@ for(let i=0; i<opButtons.length; i++) {
 
 			exprDisplay.innerHTML = exprDisplay.innerHTML.slice(0, -1);
 
+		}else if(opButtons[i].innerHTML === '%') {
+	
+			if(exprDisplay.innerHTML.includes('+')) {
+				expressArr = exprDisplay.innerHTML.trim().split('+');
+
+				if(expressArr.length === 2 && expressArr[1] !== '') {
+					let convertedNum;
+
+					if(expressArr[1].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[1]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[1]));
+					}
+
+					exprDisplay.innerHTML = `${expressArr[0]}+${convertedNum}`;
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					let convertedNum;
+
+					if(expressArr[0].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[0]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[0]));
+					}
+
+					exprDisplay.innerHTML = `${convertedNum}`;
+				}
+
+			}else if(exprDisplay.innerHTML.includes('-')) {
+				expressArr = exprDisplay.innerHTML.trim().split('-');
+
+				if(expressArr.length === 2 && expressArr[1] !== '') {
+					let convertedNum;
+
+					if(expressArr[1].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[1]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[1]));
+					}
+
+					exprDisplay.innerHTML = `${expressArr[0]}-${convertedNum}`;
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					let convertedNum;
+
+					if(expressArr[0].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[0]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[0]));
+					}
+
+					exprDisplay.innerHTML = `${convertedNum}`;
+				}
+
+
+			}else if(exprDisplay.innerHTML.includes('x')) {
+				expressArr = exprDisplay.innerHTML.trim().split('x');
+
+				if(expressArr.length === 2 && expressArr[1] !== '') {
+					let convertedNum;
+
+					if(expressArr[1].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[1]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[1]));
+					}
+
+					exprDisplay.innerHTML = `${expressArr[0]}x${convertedNum}`;
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					let convertedNum;
+
+					if(expressArr[0].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[0]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[0]));
+					}
+
+					exprDisplay.innerHTML = `${convertedNum}`;
+				}
+
+			}else if(exprDisplay.innerHTML.includes(String.fromCharCode(247))) {
+				expressArr = exprDisplay.innerHTML.trim().split(String.fromCharCode(247));
+
+				if(expressArr.length === 2 && expressArr[1] !== '') {
+					let convertedNum;
+
+					if(expressArr[1].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[1]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[1]));
+					}
+
+					exprDisplay.innerHTML = `${expressArr[0]}${String.fromCharCode(247)}${convertedNum}`;
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					let convertedNum;
+
+					if(expressArr[0].includes('.')) {
+						convertedNum = calculator.perc(parseFloat(expressArr[0]));
+					}else {
+						convertedNum = calculator.perc(parseInt(expressArr[0]));
+					}
+
+					exprDisplay.innerHTML = `${convertedNum}`;
+				}
+
+			}else {
+				let convertedNum;
+
+				if(exprDisplay.innerHTML.trim().includes('.')) {
+					convertedNum = calculator.perc(parseFloat(exprDisplay.innerHTML.trim()));
+				}else {
+					convertedNum = calculator.perc(parseInt(exprDisplay.innerHTML.trim()));
+				}
+
+				exprDisplay.innerHTML = `${convertedNum}`;
+
+			}
+		
 		}else if(opButtons[i].innerHTML === '+') {
 
 			let exprDisplayValue = exprDisplay.innerHTML;

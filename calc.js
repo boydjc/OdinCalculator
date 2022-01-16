@@ -132,8 +132,8 @@ for(let i=0; i<opButtons.length; i++) {
 
 			}else if(exprDisplayValue.includes('-')) {
 				expressArr = exprDisplayValue.trim().split('-');
-
-				if(expressArr.length === 2) {
+					
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -146,12 +146,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}+`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('-', '')}+`
 				}
 
 			}else if(exprDisplayValue.includes('x')) {
 				expressArr = exprDisplayValue.trim().split('x');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -164,12 +167,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}+`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('x', '')}+`
 				}
 
 			}else if(exprDisplayValue.includes(String.fromCharCode(247))) {
 				expressArr = exprDisplayValue.trim().split(String.fromCharCode(247));
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -182,6 +188,9 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}+`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace(String.fromCharCode(247), '')}+`
 				}
 
 			}else {
@@ -204,7 +213,7 @@ for(let i=0; i<opButtons.length; i++) {
 			if(exprDisplayValue.includes('+')) {
 				expressArr = exprDisplayValue.trim().split('+');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -217,6 +226,9 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}-`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('+', '')}-`
 				}
 
 			}else if(exprDisplayValue.includes('-')) {
@@ -240,7 +252,7 @@ for(let i=0; i<opButtons.length; i++) {
 			}else if(exprDisplayValue.includes('x')) {
 				expressArr = exprDisplayValue.trim().split('x');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -253,12 +265,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}-`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('x', '')}-`
 				}
 
 			}else if(exprDisplayValue.includes(String.fromCharCode(247))) {
 				expressArr = exprDisplayValue.trim().split(String.fromCharCode(247));
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -271,6 +286,9 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}-`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace(String.fromCharCode(247), '')}-`
 				}
 
 			}else {
@@ -294,7 +312,7 @@ for(let i=0; i<opButtons.length; i++) {
 			if(exprDisplayValue.includes('+')) {
 				expressArr = exprDisplayValue.trim().split('+');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -307,12 +325,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}x`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('+', '')}x`
 				}
 
 			}else if(exprDisplayValue.includes('-')) {
 				expressArr = exprDisplayValue.trim().split('-');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -326,7 +347,11 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}x`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('-', '')}x`
 				}
+
 
 			}else if(exprDisplayValue.includes('x')) {
 				expressArr = exprDisplayValue.trim().split('x');
@@ -349,7 +374,7 @@ for(let i=0; i<opButtons.length; i++) {
 			}else if(exprDisplayValue.includes(String.fromCharCode(247))) {
 				expressArr = exprDisplayValue.trim().split(String.fromCharCode(247));
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -362,6 +387,9 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}x`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace(String.fromCharCode(247), '')}x`
 				}
 
 			}else {
@@ -384,7 +412,7 @@ for(let i=0; i<opButtons.length; i++) {
 			if(exprDisplayValue.includes('+')) {
 				expressArr = exprDisplayValue.trim().split('+');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -397,12 +425,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}${String.fromCharCode(247)}`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('+', '')}${String.fromCharCode(247)}`
 				}
 
 			}else if(exprDisplayValue.includes('-')) {
 				expressArr = exprDisplayValue.trim().split('-');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -415,12 +446,15 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}${String.fromCharCode(247)}`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('-', '')}${String.fromCharCode(247)}`
 				}
 
 			}else if(exprDisplayValue.includes('x')) {
 				expressArr = exprDisplayValue.trim().split('x');
 
-				if(expressArr.length === 2) {
+				if(expressArr.length === 2 && expressArr[1] !== '') {
 
 					let result;
 
@@ -433,6 +467,9 @@ for(let i=0; i<opButtons.length; i++) {
 
 					exprDisplay.innerHTML = `${result}${String.fromCharCode(247)}`;
 
+				}else if(expressArr.length === 2 && expressArr[1] === '') {
+					// just change the sign of the current operation
+					exprDisplay.innerHTML = `${exprDisplay.innerHTML.replace('x', '')}${String.fromCharCode(247)}`
 				}
 
 			}else if(exprDisplayValue.includes(String.fromCharCode(247))) {
@@ -471,7 +508,7 @@ equalButton.addEventListener('click', (e) => {
 	if(exprDisplay.innerHTML.includes('+') && exprDisplay.innerHTML.trim() !== '') {
 
 		expressArr = exprDisplay.innerHTML.trim().split('+');
-		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=')) {
+		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=') && expressArr[1] !== '') {
 			exprDisplay.innerHTML = `${exprDisplay.innerHTML}=`;
 		}
 
@@ -484,7 +521,7 @@ equalButton.addEventListener('click', (e) => {
 	}else if(exprDisplay.innerHTML.includes('-') && exprDisplay.innerHTML.trim() !== '') {
 
 		expressArr = exprDisplay.innerHTML.trim().split('-');
-		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=')) {
+		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=') && expressArr[1] !== '') {
 			exprDisplay.innerHTML = `${exprDisplay.innerHTML}=`;
 		}
 
@@ -498,7 +535,7 @@ equalButton.addEventListener('click', (e) => {
 	}else if(exprDisplay.innerHTML.includes('x') && exprDisplay.innerHTML.trim() !== '') {
 
 		expressArr = exprDisplay.innerHTML.trim().split('x');
-		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=')) {
+		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=') && expressArr[1] !== '') {
 			exprDisplay.innerHTML = `${exprDisplay.innerHTML}=`;
 		}
 
@@ -511,7 +548,7 @@ equalButton.addEventListener('click', (e) => {
 	}else if(exprDisplay.innerHTML.includes(String.fromCharCode(247)) && exprDisplay.innerHTML.trim() !== '') {
 
 		expressArr = exprDisplay.innerHTML.trim().split(String.fromCharCode(247));
-		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=')) {
+		if(expressArr.length === 2 && !exprDisplay.innerHTML.includes('=') && expressArr[1] !== '') {
 			exprDisplay.innerHTML = `${exprDisplay.innerHTML}=`;
 		}
 

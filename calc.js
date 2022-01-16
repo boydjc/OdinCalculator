@@ -30,7 +30,11 @@ const calculator = {
 				result = this.mul(a, b);
 				break;
 			case String.fromCharCode(247):
-				result = this.div(a, b);
+				if(b === 0) {
+					result = "Cannot divide by 0!";
+				}else{
+					result = this.div(a, b);
+				}
 				break;
 			default:
 				break;
